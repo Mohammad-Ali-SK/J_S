@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./Script.js" defer></script>
+   
 </head>
 <body>
     <div style="padding: 7vh;" class="container">
@@ -13,28 +13,53 @@
         <form action="">
 
             <div class="amount">
-                <p>Enter Amount</p>
-                <input type="text" value="100">
+              
+                <input type="number" value="100" placeholder="Enter Amount">
             </div>
 
-            <div style="margin-top: 20px;" class="droundown">
+            <div style="margin-top: 20px;" class="dropdown">
                 <div class="from">
-                    <p>Seclect Countrey</p>
-                    <img src="" alt="">
-                    <select name="" id="">
+                    <p>Form</p>
+                    <div class="select-container">
+                    
+                    <img src="https://flagsapi.com/US/flat/64.png" alt="">
+                    <select name="from" id="">
+                        <option value="USD" selected>USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="AUD">AUED</option>
+                        <option value="INR">INR</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="to">
+                    <p>To</p>
+                    <div class="select-container">
+                    
+                    <img src="https://flagsapi.com/IN/flat/64.png" alt="">
+                    <select name="from" id="">
                         <option value="USD">USD</option>
                         <option value="EUR">EUR</option>
                         <option value="AUD">AUED</option>
+                        <option value="INR" selected>INR</option>
                     </select>
-                </div>
-                <div class="to">
 
                 </div>
             </div>
+            <hr style="margin-top: 10px;" >
 
+           <div class="footer">
+          
+            <button class="btn">
+                <p>Get Exchange</p>
+            </button>
+            <div style="margin-top: 10px;" class="msg">1USD  = 80INR </div>
+
+           </div>
 
         </form>
     </div>
-    
+    <script src="./codes.js"></script>
+    <script src="./Script.js"></script>
 </body>
 </html>
