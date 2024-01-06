@@ -160,4 +160,51 @@ const countryList = {
     ZWD: "ZW",
   };
 
+const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
+const dropDown = document.querySelectorAll(".dropdown select");
+const btn = document.querySelector("button");
+const fromCurr = document.querySelector(".from select");
+const toCurr = document.querySelector(".to select");
+
+for(let select of dropDown){
+    for(code in countryList){
+        let newOption = document.createElement("option");
+        newOption.value = code;
+        newOption.innerText = code;
+        if(select.name === "from" && code === "USD"){
+            newOption.selected = "selected";
+
+    }else if(select.name === "to" && code === "INR"){
+        newOption.selected = "selected";
+    };
+    select.append(newOption);
+}
+select.addEventListener("change", (evt) => {
+    updateFlag(evt.target);
+})
+};
+const updateFlag  = (e) => {
+    let code = e.value;
+    let countryCode = countryList[code];
+    let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
+    let img = e.parentElement.querySelector("img");
+    img.src = newSrc;
+    console.log(newSrc);
+};
+
+
+btn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    let amount = document.querySelector(".amount input");
+    let amountVal = amount.value;
+    let newURL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
+    let response =await fetch(newURL);
+    let data = await response.json();
+    let rate = data[toCurr.value.toLowerCase()];
+    let finalAmount = Math.floor(amountVal * rate);
+    let ans = `${amountVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+    result.innerText = ans;
   
+
+
+})

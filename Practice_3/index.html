@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Convetor</h1>
+        <form action="#">
+            <div class="amount">
+                <p>Enter Amount</p>
+                <input value="100" type="text">
+
+            </div>
+            <div class="dropdown">
+                <div class="from">
+                    <p>From</p>
+
+                    <div class="selected">
+                        <img src="https://flagsapi.com/US/flat/64.png" alt="country Img">
+                        <select name="from" id="">
+                        
+                        </select>
+                    </div>
+                </div>
+                <div class="to">
+                    <p>TO</p>
+                
+                    <div class="selected">
+                        <img src="https://flagsapi.com/IN/flat/64.png" alt="country Img">
+                        <select name="to" id="">
+                            
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <button class="button">Exchange</button>
+        </form>
+        <p id="result">1 USD = 78 INR</p>
+    </div>
+   
+    <script src="./script.js"></script>
+</body>
+</html>

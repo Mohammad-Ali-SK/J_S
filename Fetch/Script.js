@@ -5,6 +5,7 @@ const btn = document.querySelector(".btn");
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select");
 const msg = document.querySelector(".msg");
+
 // const img = document.querySelectorAll(".dropdown .img");
 for(let select of dropDown){
    for(code in countryList){
@@ -27,7 +28,7 @@ for(let select of dropDown){
 let updateFlag = (element) => {
     let code = element.value;
     let countryCode = countryList[code];
-    let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
+ 
    let img = element.parentElement.querySelector("img");
    img.src = newSrc;
 
